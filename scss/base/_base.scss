@@ -1,0 +1,21 @@
+.container {
+    margin-top: em(30px);
+    margin-left: em(20px);
+    margin-right: em(20px);
+    margin-bottom: em(10px);
+    font-family: $font-family--primary;
+    line-height: ($base__line/$base__font-size);
+    color: $black;
+    font-weight: 500;
+    @include mq(medium) {
+        margin:0 auto;
+        max-width: em(765px);
+    }
+}
+
+p {
+    cursor: pointer;
+    span:hover {
+        color: $orange;
+    }
+}

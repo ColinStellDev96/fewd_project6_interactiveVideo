@@ -1,0 +1,8 @@
+video {
+    width: 100%;
+    @include mq (medium) {
+        display: block;
+        margin: em(20px) auto;
+        max-width: em(765px);
+    }
+}
