@@ -912,15 +912,15 @@ p {
   p span:hover {
     color: #ec5f00; }
 
-video {
+.mejs__container {
   width: 100%; }
   @media (min-width: 769px) {
-    video {
+    .mejs__container {
       display: block;
       margin: 1.1111111111em auto;
       max-width: 42.5em; } }
   @media (min-width: 1024px) {
-    video {
+    .mejs__container {
       max-width: 56.8888888889em; } }
 
 .mejs__overlay-button {
