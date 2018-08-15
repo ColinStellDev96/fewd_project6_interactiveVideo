@@ -5,4 +5,17 @@ video {
         margin: em(20px) auto;
         max-width: em(765px);
     }
+    @include mq(large) {
+        max-width: em(1024px);
+    }
+}
+
+.mejs__overlay-button {
+	background-image: url("svgs/mejs-controls.svg");
+}
+.mejs__overlay-loading-bg-img {
+	background-image: url("svgs/mejs-controls.svg");
+}
+.mejs__button > button {
+	background-image: url("svgs/mejs-controls.svg");
 }
