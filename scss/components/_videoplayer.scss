@@ -5,6 +5,7 @@
     @include mq(medium) {
         margin: em(20px) auto;
         max-width: em(765px);
+        box-shadow:0 0 em(8px) $primary;
     }
     @include mq(large) {
         max-width: em(1024px);

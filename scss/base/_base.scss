@@ -1,7 +1,3 @@
-body {
-    background: $primary;
-}
-
 .container {
     margin-top: em(30px);
     margin-left: em(20px);
@@ -9,7 +5,7 @@ body {
     margin-bottom: em(10px);
     font-family: $font-family--primary;
     line-height: ($base__line/$base__font-size);
-    color: $white;
+    color: $primary;
     font-weight: 500;
     @include mq(medium) {
         margin:0 auto;

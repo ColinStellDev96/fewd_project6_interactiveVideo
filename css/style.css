@@ -297,9 +297,6 @@ template {
 [hidden] {
   display: none; }
 
-body {
-  background: #013838; }
-
 .container {
   margin-top: 1.6666666667em;
   margin-left: 1.1111111111em;
@@ -307,7 +304,7 @@ body {
   margin-bottom: 0.5555555556em;
   font-family: "Roboto", "Helvitca Neue", Helvetica, Arial, sans-serif;
   line-height: 1.9444444444;
-  color: white;
+  color: #013838;
   font-weight: 500; }
   @media (min-width: 769px) {
     .container {
@@ -329,7 +326,8 @@ p {
   @media (min-width: 769px) {
     .video_player {
       margin: 1.1111111111em auto;
-      max-width: 42.5em; } }
+      max-width: 42.5em;
+      box-shadow: 0 0 0.4444444444em #013838; } }
   @media (min-width: 1024px) {
     .video_player {
       max-width: 56.8888888889em; } }
