@@ -4,21 +4,26 @@
         <meta charset="utf=8">
         <title>Interactive Video Player</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-            <video class="video_player">
+        <div class="video_player">
+            <video class="video">
                 <source src="video/video.mp4" type="video/mp4">
                 <source src="video/video.ogg" type="video/ogg">
-                <div class="controls">
-                    <input type="range" class="volume_slider" min=0 max="1" step="0.5" value="1">
-                    <button id="fullscreen" type="button" data-state="fullscreen_toggle">Fullscreen</button>
-                    <button class="play_button" title="Play">▶</button>
-                    <div class="progress_bar">
-                        <div class="progress_full"></div>
-                    </div>
-                </div>
             </video>
+                <div class="controls">
+                    <div class="current">0:00</div>
+                    <div class="progress_bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="duration">0:00</div>
+                        <button class="volume_button" type="button" title="volume"><i class="fas fa-volume-up"></i></button>
+                    <button class="play_button" type="button" title="Play"><i class="fas fa-play-circle"></i></button>
+                    <button class="fullscreen" type="button"><i class="fas fa-arrows-alt"></i></button>
+                </div>
+        </div>
             <div class="container">
                 <p>
                     <span>

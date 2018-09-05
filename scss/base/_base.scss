@@ -1,3 +1,7 @@
+body {
+    background: $primary;
+}
+
 .container {
     margin-top: em(30px);
     margin-left: em(20px);
@@ -5,7 +9,7 @@
     margin-bottom: em(10px);
     font-family: $font-family--primary;
     line-height: ($base__line/$base__font-size);
-    color: $black;
+    color: $white;
     font-weight: 500;
     @include mq(medium) {
         margin:0 auto;
@@ -19,6 +23,6 @@
 p {
     cursor: pointer;
     span:hover {
-        color: $orange;
+        color: $light_blue;
     }
 }

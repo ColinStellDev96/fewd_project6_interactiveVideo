@@ -1,11 +1,89 @@
-video {
+.video_player {
     width: 100%;
-    @include mq (medium) {
-        display: block;
+    position: relative;
+    overflow:hidden;
+    @include mq(medium) {
         margin: em(20px) auto;
         max-width: em(765px);
     }
     @include mq(large) {
         max-width: em(1024px);
     }
+    &:hover .controls{
+        transform: translateY(0);
+    }
 }
+
+.video {
+    width: 100%;
+    overflow: hidden;
+    @include mq (medium) {
+        display: block;
+    }
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    flex-wrap: wrap;
+    bottom: 0;
+    background-color: $white, 0.2;
+    justify-content: space-between;
+    @include mq (medium){
+        transform: translateY(100%) translateY(em(-15px));
+        transition: all .3s;
+    }
+    
+}
+
+button {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+i {
+    width: em(28px);
+    height: auto;
+    display: inline-block;
+    font-size: em(24px);
+    color: $white;
+    &:hover {
+        color: $primary;
+    }
+    padding-top: em(5px);
+    padding-bottom: em(5px);
+}
+
+.current,
+.duration {
+    width: 8%;
+    font-size: em(12px);
+    text-align: center;
+    font-family: $font-family--primary;
+    color: $white;
+    @include mq (medium) {
+        font-size: em(14px);
+        width: 5%;
+    }
+}
+
+.progress_bar {
+    height: em(10px);
+    top: 0;
+    left: 0;
+    width: 80%;
+    background-color: $primary-opac;
+    @include mq (medium) {
+        width: 90%;
+    }
+}
+
+.progress {
+    height: em(10px);
+    background-color: $white-opac;
+}
+
+

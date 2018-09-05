@@ -297,6 +297,9 @@ template {
 [hidden] {
   display: none; }
 
+body {
+  background: #013838; }
+
 .container {
   margin-top: 1.6666666667em;
   margin-left: 1.1111111111em;
@@ -304,7 +307,7 @@ template {
   margin-bottom: 0.5555555556em;
   font-family: "Roboto", "Helvitca Neue", Helvetica, Arial, sans-serif;
   line-height: 1.9444444444;
-  color: #1a1a1a;
+  color: white;
   font-weight: 500; }
   @media (min-width: 769px) {
     .container {
@@ -317,17 +320,84 @@ template {
 p {
   cursor: pointer; }
   p span:hover {
-    color: #ec5f00; }
+    color: #00ead7; }
 
-video {
-  width: 100%; }
+.video_player {
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
   @media (min-width: 769px) {
-    video {
-      display: block;
+    .video_player {
       margin: 1.1111111111em auto;
       max-width: 42.5em; } }
   @media (min-width: 1024px) {
-    video {
+    .video_player {
       max-width: 56.8888888889em; } }
+  .video_player:hover .controls {
+    transform: translateY(0); }
+
+.video {
+  width: 100%;
+  overflow: hidden; }
+  @media (min-width: 769px) {
+    .video {
+      display: block; } }
+
+.controls {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  flex-wrap: wrap;
+  bottom: 0;
+  background-color: white, 0.2;
+  justify-content: space-between; }
+  @media (min-width: 769px) {
+    .controls {
+      transform: translateY(100%) translateY(-0.8333333333em);
+      transition: all .3s; } }
+
+button {
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer; }
+
+i {
+  width: 1.5555555556em;
+  height: auto;
+  display: inline-block;
+  font-size: 1.3333333333em;
+  color: white;
+  padding-top: 0.2777777778em;
+  padding-bottom: 0.2777777778em; }
+  i:hover {
+    color: #013838; }
+
+.current,
+.duration {
+  width: 8%;
+  font-size: 0.6666666667em;
+  text-align: center;
+  font-family: "Roboto", "Helvitca Neue", Helvetica, Arial, sans-serif;
+  color: white; }
+  @media (min-width: 769px) {
+    .current,
+    .duration {
+      font-size: 0.7777777778em;
+      width: 5%; } }
+
+.progress_bar {
+  height: 0.5555555556em;
+  top: 0;
+  left: 0;
+  width: 80%;
+  background-color: rgba(1, 56, 56, 0.5); }
+  @media (min-width: 769px) {
+    .progress_bar {
+      width: 90%; } }
+
+.progress {
+  height: 0.5555555556em;
+  background-color: rgba(255, 255, 255, 0.5); }
 
 /*# sourceMappingURL=style.css.map */

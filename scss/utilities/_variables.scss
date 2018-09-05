@@ -4,10 +4,15 @@ $font-family--primary: 'Roboto', 'Helvitca Neue', Helvetica, Arial, sans-serif;
 $font-family--secondary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 //BASE COLORS
-$white: #fff;
+$white: rgb(255, 255, 255);
 $black: #1a1a1a;
 $grey: #808080;
-$orange: #ec5f00;
+$light_blue: #00ead7;
+$primary: rgb(1, 56, 56);
+
+//OPACITY:
+$primary-opac: rgba(1, 56, 56, .5);
+$white-opac:rgba(255, 255, 255, .5);
 
 // TEXT
 $base__font-size: 18px;
