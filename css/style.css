@@ -347,7 +347,7 @@ p {
   width: 100%;
   flex-wrap: wrap;
   bottom: 0;
-  background-color: white, 0.2;
+  background-color: rgba(1, 56, 56, 0.3);
   justify-content: space-between; }
   @media (min-width: 769px) {
     .controls {
