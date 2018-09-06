@@ -5,6 +5,9 @@ let playPauseIcons = playPause.getElementsByTagName('i')[0];
 let progress = videoPlayer.querySelector('.progress');
 let mute = videoPlayer.querySelector('.mute_button');
 let muteIcon = mute.getElementsByTagName('i')[0];
+let volumeDown = videoPlayer.querySelector('.volume_down');
+let volumeUp = videoPlayer.querySelector('.volume_up');
+let fullscreen = videoPlayer.querySelector('.fullscreen');
 
 
 //Progress Bar Function & Event Listener
@@ -32,6 +35,21 @@ mute.addEventListener('click', muteVideo);
 
 // Volume Function & Event Listener
 
+let currentVolume = Math.floor(video.volume * 10) / 10;
+console.log(currentVolume);
+
+volumeDown.addEventListener('click', () => {
+    if (currentVolume > 0.0) {
+        video.volume -= 0.2;
+        console.log(video.volume);
+    }
+});
+volumeUp.addEventListener('click', () => {
+    if (currentVolume < 1.0 || currentVolume >= 0.0) {
+        video.volume += 0.2;
+        console.log(video.volume);
+    }
+});
 
 
 // Play/Pause Function & Event Listener + Icon Change
@@ -47,3 +65,15 @@ let playPauseToggle = () => {
 playPause.addEventListener('click', playPauseToggle);
 
 // Full Screen Function & Event Listener
+
+toggleFullScreen = () => {
+    if(video.requestFullscreen){
+        video.requestFullscreen();
+    } else if(video.webkitRequestFullScreen){
+		video.webkitRequestFullScreen();
+	} else if(video.mozRequestFullScreen){
+		video.mozRequestFullScreen();
+	}
+}
+
+fullscreen.addEventListener('click', toggleFullScreen);
