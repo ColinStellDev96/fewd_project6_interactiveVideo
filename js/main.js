@@ -10,8 +10,8 @@ let volumeUp = videoPlayer.querySelector('.volume_up');
 let fullscreen = videoPlayer.querySelector('.fullscreen');
 let current = videoPlayer.querySelector('.current');
 let duration = videoPlayer.querySelector('.duration');
-let textHighlight = videoPlayer.querySelector('.textHighlight'); 
-let text = textHighlight.getElementsByClassName('.textSec')[0];
+let textData = document.getElementsByClassName('textSec');
+
 
 
 //Progress Bar Function & Event Listener + Current Time & Duration
@@ -27,7 +27,15 @@ let progressUpdate = () => {
     let timeDuration = video.duration;
     duration.innerHTML = (parseFloat(timeDuration).toFixed(2)) - (parseFloat(timeCurrent).toFixed(2));
     // Highlight Text that Matches current time
-    
+    let textArr = [];
+    for (let i = 0; i < textData.length; i ++) {
+        // console.log(textData[i]);
+        if (textData[i].getAttribute('data-start') >= video.currentTime && textData[i].getAttribute('data-end') <= video.currentTime) {
+            textArr.push(textData[i]);
+            console.log(textArr[0]);
+            textArr.style.color="$light_blue";
+        }
+    }
 }
 video.addEventListener('timeupdate', progressUpdate);
 
