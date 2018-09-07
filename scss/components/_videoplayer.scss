@@ -32,7 +32,7 @@
     background-color: rgba(1, 56, 56, .3);
     justify-content: space-between;
     @include mq (medium){
-        transform: translateY(100%) translateY(em(-15px));
+        transform: translateY(100%) translateY(em(-20px));
         transition: all .3s;
     }
 }

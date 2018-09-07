@@ -12,8 +12,6 @@ let current = videoPlayer.querySelector('.current');
 let duration = videoPlayer.querySelector('.duration');
 let textData = document.getElementsByClassName('textSec');
 
-
-
 //Progress Bar Function & Event Listener + Current Time & Duration
 let progressUpdate = () => {
     let videoProgress = video.currentTime / video.duration;
@@ -31,8 +29,10 @@ let progressUpdate = () => {
         // console.log(textData[i]);
         console.log(textData[i].getAttribute('data-start'));
         console.log(timeCurrent);
-        if (textData[i].getAttribute('data-start') > video.currentTime && textData[i].getAttribute('data-end') < video.currentTime) {
-            textData[i].parent.style.color = "$light_blue";
+        if (timeCurrent > textData[i].getAttribute('data-start')  && timeCurrent < textData[i].getAttribute('data-end')) {
+            textData[i].classList.add("hightlight");
+        } else {
+            textData[i].classList.remove('highlight');
         }
     }
 }

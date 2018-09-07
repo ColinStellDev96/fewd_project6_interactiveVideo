@@ -18,7 +18,11 @@
 
 p {
     cursor: pointer;
-    span:hover {
+    .textSec:hover {
         color: $light_blue;
     }
+}
+
+.highlight {
+    color: $light_blue;
 }

@@ -316,8 +316,11 @@ template {
 
 p {
   cursor: pointer; }
-  p span:hover {
+  p .textSec:hover {
     color: #00ead7; }
+
+.highlight {
+  color: #00ead7; }
 
 .video_player {
   width: 100%;
@@ -351,7 +354,7 @@ p {
   justify-content: space-between; }
   @media (min-width: 769px) {
     .controls {
-      transform: translateY(100%) translateY(-0.8333333333em);
+      transform: translateY(100%) translateY(-1.1111111111em);
       transition: all .3s; } }
 
 button {
