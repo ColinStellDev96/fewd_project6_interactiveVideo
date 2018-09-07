@@ -8,15 +8,26 @@ let muteIcon = mute.getElementsByTagName('i')[0];
 let volumeDown = videoPlayer.querySelector('.volume_down');
 let volumeUp = videoPlayer.querySelector('.volume_up');
 let fullscreen = videoPlayer.querySelector('.fullscreen');
+let current = videoPlayer.querySelector('.current');
+let duration = videoPlayer.querySelector('.duration');
+let textHighlight = videoPlayer.querySelector('.textHighlight'); 
+let text = textHighlight.getElementsByClassName('.textSec')[0];
 
 
-//Progress Bar Function & Event Listener
+//Progress Bar Function & Event Listener + Current Time & Duration
 let progressUpdate = () => {
     let videoProgress = video.currentTime / video.duration;
     progress.style.width = videoProgress * 100 + '%';
     if (video.ended){
         playPauseIcons.className = "fas fa-play-circle";
     }
+    // Time Tracker for Current Time & Duration Left
+    let timeCurrent = video.currentTime;
+    current.innerHTML = parseFloat(timeCurrent).toFixed(2);
+    let timeDuration = video.duration;
+    duration.innerHTML = (parseFloat(timeDuration).toFixed(2)) - (parseFloat(timeCurrent).toFixed(2));
+    // Highlight Text that Matches current time
+    
 }
 video.addEventListener('timeupdate', progressUpdate);
 
@@ -51,7 +62,6 @@ volumeUp.addEventListener('click', () => {
     }
 });
 
-
 // Play/Pause Function & Event Listener + Icon Change
 let playPauseToggle = () => {
     if(video.paused) {
@@ -77,3 +87,4 @@ toggleFullScreen = () => {
 }
 
 fullscreen.addEventListener('click', toggleFullScreen);
+
