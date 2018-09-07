@@ -22,18 +22,17 @@ let progressUpdate = () => {
         playPauseIcons.className = "fas fa-play-circle";
     }
     // Time Tracker for Current Time & Duration Left
-    let timeCurrent = video.currentTime;
-    current.innerHTML = parseFloat(timeCurrent).toFixed(2);
-    let timeDuration = video.duration;
-    duration.innerHTML = (parseFloat(timeDuration).toFixed(2)) - (parseFloat(timeCurrent).toFixed(2));
+    let timeCurrent = parseFloat(video.currentTime).toFixed(2);
+    current.innerHTML = timeCurrent;
+    let timeDuration = parseFloat(video.duration).toFixed(2);
+    duration.innerHTML = (timeDuration) - (timeCurrent);
     // Highlight Text that Matches current time
-    let textArr = [];
     for (let i = 0; i < textData.length; i ++) {
         // console.log(textData[i]);
-        if (textData[i].getAttribute('data-start') >= video.currentTime && textData[i].getAttribute('data-end') <= video.currentTime) {
-            textArr.push(textData[i]);
-            console.log(textArr[0]);
-            textArr.style.color="$light_blue";
+        console.log(textData[i].getAttribute('data-start'));
+        console.log(timeCurrent);
+        if (textData[i].getAttribute('data-start') > video.currentTime && textData[i].getAttribute('data-end') < video.currentTime) {
+            textData[i].parent.style.color = "$light_blue";
         }
     }
 }
