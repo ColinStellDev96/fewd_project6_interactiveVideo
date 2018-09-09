@@ -322,6 +322,12 @@ p {
 .highlight {
   color: #00ead7; }
 
+html:-ms-fullscreen {
+  width: 100%; }
+
+:-webkit-full-screen {
+  background-color: transparent; }
+
 .video_player {
   width: 100%;
   position: relative;
@@ -344,6 +350,9 @@ p {
     .video {
       display: block; } }
 
+video::-webkit-media-controls {
+  display: none !important; }
+
 .controls {
   display: flex;
   position: absolute;
@@ -351,7 +360,8 @@ p {
   flex-wrap: wrap;
   bottom: 0;
   background-color: rgba(1, 56, 56, 0.3);
-  justify-content: space-between; }
+  justify-content: space-between;
+  z-index: 2147483647; }
   @media (min-width: 769px) {
     .controls {
       transform: translateY(100%) translateY(-1.1111111111em);
