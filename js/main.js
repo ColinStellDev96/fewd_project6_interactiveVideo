@@ -134,7 +134,7 @@ toggleFullScreen = () =>  {
 
 fullscreen.addEventListener('click', toggleFullScreen);
 
-document.addEventListener('fullscreenchange', function(e) {
+document.addEventListener('fullscreenchange', function() {
     setFullscreenData(!!(document.fullScreen || document.fullscreenElement));
  });
  document.addEventListener('webkitfullscreenchange', function() {
