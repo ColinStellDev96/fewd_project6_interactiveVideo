@@ -30,10 +30,12 @@ let progressUpdate = () => {
       });
 
     // Time Tracker for Current Time & Duration Left
+
     let timeCurrent = parseFloat(video.currentTime).toFixed(2);
     current.innerHTML = timeCurrent;
     let timeDuration = parseFloat(video.duration).toFixed(2);
     duration.innerHTML = (timeDuration) - (timeCurrent);
+
     // Highlight Text that Matches current time
     for (let i = 0; i < textData.length; i++) {
         if (video.currentTime > textData[i].getAttribute('data-start') && video.currentTime < textData[i].getAttribute('data-end')) {
