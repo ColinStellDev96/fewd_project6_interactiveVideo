@@ -7,6 +7,7 @@
     line-height: ($base__line/$base__font-size);
     color: $primary;
     font-weight: 500;
+    z-index: 1;
     @include mq(medium) {
         margin:0 auto;
         max-width: em(765px);
