@@ -20,6 +20,14 @@ html:-ms-fullscreen {
     &:hover .controls{
         transform: translateY(0);
     }
+    &:fullscreen {
+        max-width: none;
+        width: 100%;
+    }
+    &:-webkit-full-screen {
+        max-width: none;
+        width: 100%;
+      }
 }
 
 .video {
@@ -31,21 +39,26 @@ html:-ms-fullscreen {
 }
 
 video::-webkit-media-controls { 
-    display:none !important; 
+    display: none !important; 
 }
 
 .controls {
     display: flex;
     position: absolute;
+    left: 0% !important;
     width: 100%;
     flex-wrap: wrap;
-    bottom: 0;
+    bottom: 0%;
     background-color: rgba(1, 56, 56, .3);
     justify-content: space-between;
     z-index: 2147483647;
     @include mq (medium){
         transform: translateY(100%) translateY(em(-20px));
         transition: all .3s;
+    }
+    &:fullscreen {
+        margin: 0;
+        padding: 0;
     }
 }
 

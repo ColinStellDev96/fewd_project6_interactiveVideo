@@ -342,6 +342,12 @@ html:-ms-fullscreen {
       max-width: 56.8888888889em; } }
   .video_player:hover .controls {
     transform: translateY(0); }
+  .video_player:fullscreen {
+    max-width: none;
+    width: 100%; }
+  .video_player:-webkit-full-screen {
+    max-width: none;
+    width: 100%; }
 
 .video {
   width: 100%;
@@ -356,9 +362,10 @@ video::-webkit-media-controls {
 .controls {
   display: flex;
   position: absolute;
+  left: 0% !important;
   width: 100%;
   flex-wrap: wrap;
-  bottom: 0;
+  bottom: 0%;
   background-color: rgba(1, 56, 56, 0.3);
   justify-content: space-between;
   z-index: 2147483647; }
@@ -366,6 +373,9 @@ video::-webkit-media-controls {
     .controls {
       transform: translateY(100%) translateY(-1.1111111111em);
       transition: all .3s; } }
+  .controls:fullscreen {
+    margin: 0;
+    padding: 0; }
 
 button {
   background: none;

@@ -100,6 +100,7 @@ let playPauseToggle = () => {
 playPause.addEventListener('click', playPauseToggle);
 
 // Full Screen Function & Event Listener
+// This portion is standard fullscreen custom code from: https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/cross_browser_video_player#Fullscreen
 
 let fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled);
 
@@ -112,22 +113,31 @@ if (!fullScreenEnabled) {
  }
 
 let setFullscreenData = (state) => {
-    video.setAttribute('data-fullscreen', !!state);
+    videoPlayer.setAttribute('data-fullscreen', !!state);
  }
 
 toggleFullScreen = () =>  {
         if (isFullScreen()) {
-           if (document.exitFullscreen) document.exitFullscreen();
-           else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-           else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
-           else if (document.msExitFullscreen) document.msExitFullscreen();
+           if (document.exitFullscreen) {
+            document.exitFullscreen();
+           } else if (document.mozCancelFullScreen){
+            document.mozCancelFullScreen();
+           }else if (document.webkitCancelFullScreen){ 
+            document.webkitCancelFullScreen();
+           } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+           }
            setFullscreenData(false);
-        }
-        else {
-           if (video.requestFullscreen) video.requestFullscreen();
-           else if (video.mozRequestFullScreen) video.mozRequestFullScreen();
-           else if (video.webkitRequestFullScreen) video.webkitRequestFullScreen();
-           else if (video.msRequestFullscreen) video.msRequestFullscreen();
+        } else {
+           if (video.requestFullscreen) {
+               video.requestFullscreen();
+           } else if (video.mozRequestFullScreen) {
+               video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullScreen) {
+                video.webkitRequestFullScreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
            setFullscreenData(true);
         }
      }
