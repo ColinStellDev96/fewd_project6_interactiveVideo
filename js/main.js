@@ -129,7 +129,6 @@ toggleFullScreen = () =>  {
             document.msExitFullscreen();
            }
            setFullscreenData(false);
-           video.addEventListener('timeupdate', progressUpdate);
         } else {
            if (videoPlayer.requestFullscreen) {
                videoPlayer.requestFullscreen();

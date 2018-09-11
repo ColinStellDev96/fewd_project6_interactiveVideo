@@ -62,8 +62,8 @@ video::-webkit-full-screen {
 
 button {
     background: none;
-    border: 0;
-    outline: 0;
+    border: 0%;
+    outline: 0%;
     cursor: pointer;
 }
 
@@ -96,8 +96,8 @@ i {
 
 .progress_bar {
     height: em(10px);
-    top: 0;
-    left: 0;
+    top: 0%;
+    left: 0%;
     width: 80%;
     background-color: $primary-opac;
     margin-top: em(5px);
