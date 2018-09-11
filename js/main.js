@@ -75,17 +75,14 @@ mute.addEventListener('click', muteVideo);
 
 // Volume Function & Event Listener
 
-let currentVolume = Math.floor(video.volume * 10) / 10;
-console.log(currentVolume);
-
 volumeDown.addEventListener('click', () => {
-    if (currentVolume > 0.0) {
+    if (video.volume > 0.1) {
         video.volume -= 0.1;
         console.log(video.volume);
     }
 });
 volumeUp.addEventListener('click', () => {
-    if (currentVolume < 1.0 || currentVolume >= 0.0) {
+    if (video.volume <= 0.9 && video.volume >= 0.0) {
         video.volume += 0.1;
         console.log(video.volume);
     }
