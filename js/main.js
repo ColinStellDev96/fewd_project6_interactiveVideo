@@ -34,29 +34,31 @@ let progressUpdate = () => {
     let timeCurrent = parseFloat(video.currentTime).toFixed(2);
     current.innerHTML = timeCurrent;
     let timeDuration = parseFloat(video.duration).toFixed(2);
-    duration.innerHTML = (timeDuration) - (timeCurrent);
+    duration.innerHTML = (timeDuration - timeCurrent).toFixed(2);
+
 
     // Highlight Text that Matches current time
     for (let i = 0; i < textData.length; i++) {
         if (video.currentTime > textData[i].getAttribute('data-start') && video.currentTime < textData[i].getAttribute('data-end')) {
-            textData[i].style.backgroundColor = "rgb(0, 234, 215)" ;
+            textData[i].style.backgroundColor = "rgba(1, 56, 56, .5)" ;
+            textData[i].style.color = "rgb(255, 255, 255)";
         } else {
             textData[i].style.backgroundColor = "";
+            textData[i].style.color = "rgb(1, 56, 56)";
         }
+    }
+
+    // Time Jump Functionality when a user clicks on a section in the text
+    for (let i = 0; i < textPar.length; i++) {
+        textPar[i].addEventListener('click', () => {
+            let timeJump = textPar[i].getAttribute('data-start');
+            video.currentTime = (parseFloat(timeJump).toFixed(2));
+            video.play();
+        });
     }
 
 }
 video.addEventListener('timeupdate', progressUpdate);
-
-// Time Jump Functionality when a user clicks on a section in the text
-
-for (let i = 0; i < textPar.length; i++) {
-    textPar[i].addEventListener('click', () => {
-        let timeJump = textPar[i].getAttribute('data-start');
-        video.currentTime = (parseFloat(timeJump).toFixed(2));
-        video.play();
-    });
-}
 
 // Mute/Unmute Function & Event Listener 
 
@@ -78,13 +80,13 @@ console.log(currentVolume);
 
 volumeDown.addEventListener('click', () => {
     if (currentVolume > 0.0) {
-        video.volume -= 0.2;
+        video.volume -= 0.1;
         console.log(video.volume);
     }
 });
 volumeUp.addEventListener('click', () => {
     if (currentVolume < 1.0 || currentVolume >= 0.0) {
-        video.volume += 0.2;
+        video.volume += 0.1;
         console.log(video.volume);
     }
 });

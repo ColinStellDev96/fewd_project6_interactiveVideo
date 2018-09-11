@@ -318,7 +318,7 @@ template {
 p {
   cursor: pointer; }
   p .textSec:hover {
-    color: #00ead7; }
+    font-weight: bold; }
 
 .highlight {
   color: #00ead7; }
