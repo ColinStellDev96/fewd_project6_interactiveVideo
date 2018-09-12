@@ -1,18 +1,20 @@
-let videoPlayer = document.querySelector('.video_player');
-let video = videoPlayer.querySelector('.video');
-let playPause = videoPlayer.querySelector('#play-pause-button');
-let playPauseIcons = playPause.getElementsByTagName('i')[0];
-let progressBar = videoPlayer.querySelector('.progress_bar');
-let progress = videoPlayer.querySelector('.progress');
-let mute = videoPlayer.querySelector('.mute_button');
-let muteIcon = mute.getElementsByTagName('i')[0];
-let volumeDown = videoPlayer.querySelector('.volume_down');
-let volumeUp = videoPlayer.querySelector('.volume_up');
-let fullscreen = videoPlayer.querySelector('.fullscreen');
-let current = videoPlayer.querySelector('.current');
-let duration = videoPlayer.querySelector('.duration');
-let textData = document.getElementsByClassName('textSec');
-let textPar = document.querySelector('.textHighlight').getElementsByTagName('span');
+// Selecting DOM Elements
+
+const videoPlayer = document.querySelector('.video_player');
+const video = videoPlayer.querySelector('.video');
+const playPause = videoPlayer.querySelector('#play-pause-button');
+const playPauseIcons = playPause.getElementsByTagName('i')[0];
+const progressBar = videoPlayer.querySelector('.progress_bar');
+const progress = videoPlayer.querySelector('.progress');
+const mute = videoPlayer.querySelector('.mute_button');
+const muteIcon = mute.getElementsByTagName('i')[0];
+const volumeDown = videoPlayer.querySelector('.volume_down');
+const volumeUp = videoPlayer.querySelector('.volume_up');
+const fullscreen = videoPlayer.querySelector('.fullscreen');
+const current = videoPlayer.querySelector('.current');
+const duration = videoPlayer.querySelector('.duration');
+const textData = document.getElementsByClassName('textSec');
+const textPar = document.querySelector('.textHighlight').getElementsByTagName('span');
 
 //Progress Bar Function & Event Listener + Current Time & Duration
 let progressUpdate = () => {
