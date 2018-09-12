@@ -30,12 +30,10 @@ let progressUpdate = () => {
       });
 
     // Time Tracker for Current Time & Duration Left
-
     let timeCurrent = parseFloat(video.currentTime).toFixed(2);
     current.innerHTML = timeCurrent;
     let timeDuration = parseFloat(video.duration).toFixed(2);
     duration.innerHTML = (timeDuration - timeCurrent).toFixed(2);
-
 
     // Highlight Text that Matches current time
     for (let i = 0; i < textData.length; i++) {
@@ -76,17 +74,17 @@ mute.addEventListener('click', muteVideo);
 // Volume Function & Event Listener
 
 volumeDown.addEventListener('click', () => {
-    if (video.volume > 0.1) {
-        video.volume -= 0.1;
+    if (video.volume > 0) {
+        video.volume = Number(video.volume - 0.1).toFixed(1);
         console.log(video.volume);
     }
-});
-volumeUp.addEventListener('click', () => {
-    if (video.volume <= 0.9 && video.volume >= 0.0) {
-        video.volume += 0.1;
+  });     
+  volumeUp.addEventListener('click', () => {
+    if (video.volume < 1) {
+        video.volume = Number(video.volume + 0.1).toFixed(1);
         console.log(video.volume);
     }
-});
+  });
 
 // Play/Pause Function & Event Listener + Icon Change
 let playPauseToggle = () => {
@@ -101,7 +99,7 @@ let playPauseToggle = () => {
 playPause.addEventListener('click', playPauseToggle);
 
 // Full Screen Function & Event Listener
-// This portion is standard fullscreen custom code from: https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/cross_browser_video_player#Fullscreen
+// This portion is standard fullscreen custom code from: https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/cross_browser_video_player#Fullscreen that has been customized to work with my code
 
 let fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled);
 
